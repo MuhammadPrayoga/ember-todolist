@@ -1,0 +1,37 @@
+const sharp = require('sharp');
+const fs = require('fs');
+const path = require('path');
+
+const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0a0a0f"/>
+  <defs>
+    <linearGradient id="flame-grad" x1="32" y1="58" x2="32" y2="6" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="40%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="inner-grad" x1="32" y1="50" x2="32" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 6C32 6 18 22 18 36c0 7.7 6.3 14 14 14s14-6.3 14-14C46 22 32 6 32 6z" fill="url(#flame-grad)"/>
+  <path d="M32 28c0 0-7 8-7 15c0 3.9 3.1 7 7 7s7-3.1 7-7C39 36 32 28 32 28z" fill="url(#inner-grad)"/>
+</svg>`;
+
+const sizes = [180, 192, 512];
+const outputDir = path.join(__dirname, 'public', 'icons');
+
+async function generateIcons() {
+  for (const size of sizes) {
+    const outputPath = path.join(outputDir, `icon-${size}.png`);
+    await sharp(Buffer.from(svgIcon))
+      .resize(size, size)
+      .png()
+      .toFile(outputPath);
+    console.log(`Created icon-${size}.png`);
+  }
+  console.log('All icons generated!');
+}
+
+generateIcons().catch(console.error);
