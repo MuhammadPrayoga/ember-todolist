@@ -1,0 +1,1 @@
+A client-side todo management application with persistent storage, inline editing, and animated list interactions.

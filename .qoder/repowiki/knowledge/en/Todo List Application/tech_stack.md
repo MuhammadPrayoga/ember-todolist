@@ -1,0 +1,1 @@
+Svelte 5 (using `$state`, `$props`, `$derived` runes) with Vite 8 for development and building.

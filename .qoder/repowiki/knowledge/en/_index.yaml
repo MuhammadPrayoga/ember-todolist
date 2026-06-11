@@ -1,0 +1,37 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: en-US
+branch: Q0DeR-MaG1C-BrAnCh-Fo2-NoN-GiT-Or-No-C0MmIt
+exported_at: "2026-06-11T17:09:53Z"
+modules:
+    "":
+        dir_name: Todo List Application
+        title: Todo List Application
+        scope:
+            - .gitignore
+            - README.md
+            - index.html
+            - jsconfig.json
+            - package-lock.json
+            - package.json
+            - svelte.config.js
+            - vite.config.js
+            - src/
+            - .vscode\extensions.json
+            - public\favicon.svg
+            - public\icons.svg
+            - src\App.svelte
+            - src\app.css
+            - src\assets\hero.png
+            - src\assets\svelte.svg
+            - src\assets\vite.svg
+            - src\lib\Counter.svelte
+            - src\lib\components\AddTodoForm.svelte
+            - src\lib\components\TodoItem.svelte
+            - src\lib\components\TodoList.svelte
+            - src\lib\stores\todos.js
+            - src\main.js
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []

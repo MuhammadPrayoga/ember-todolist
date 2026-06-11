@@ -1,0 +1,3 @@
+- Components import the shared `todos` store directly from `src/lib/stores/todos.js` to perform state mutations.
+- UI components use scoped `<style>` blocks with CSS variables or direct values for consistent Material Design-inspired theming.
+- Interactive elements utilize Material Icons via `<span class="material-icons">` for consistent iconography.

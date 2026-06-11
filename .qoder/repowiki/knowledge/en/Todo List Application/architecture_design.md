@@ -1,0 +1,5 @@
+- Entry point: `src/main.js` mounts the root `App.svelte` component into the DOM.
+- Layout: `App.svelte` composes `AddTodoForm` and `TodoList` within a styled app shell.
+- State management: A single writable Svelte store in `src/lib/stores/todos.js` handles CRUD operations and synchronizes state with `localStorage` via subscription.
+- Component hierarchy: `TodoList` renders derived/sorted todos and delegates individual item rendering to `TodoItem`, which supports inline editing and completion toggling.
+- Build configuration: Vite with `@sveltejs/vite-plugin-svelte` manages bundling and HMR as defined in `vite.config.js` and `package.json`.
