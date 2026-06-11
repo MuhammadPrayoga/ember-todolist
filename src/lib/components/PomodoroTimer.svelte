@@ -217,4 +217,30 @@
     color: white;
     border-color: var(--accent);
   }
+
+  @media (max-width: 480px) {
+    .pomodoro {
+      padding: 16px;
+      gap: 14px;
+    }
+
+    .progress-ring {
+      width: 120px;
+      height: 120px;
+    }
+
+    .time {
+      font-size: 26px;
+    }
+
+    .control-btn {
+      width: 48px;
+      height: 48px;
+    }
+
+    .duration-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
 </style>

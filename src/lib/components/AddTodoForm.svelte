@@ -156,7 +156,7 @@
     flex: 1;
     border: none;
     background: transparent;
-    font-size: 15px;
+    font-size: 16px; /* 16px prevents iOS zoom on focus */
     color: var(--text-primary);
     font-family: 'Roboto', sans-serif;
     outline: none;
@@ -351,8 +351,32 @@
   }
 
   @media (max-width: 480px) {
+    .add-form {
+      padding: 12px;
+    }
+
+    .input-wrapper {
+      padding: 10px 12px;
+    }
+
+    .options-toggle, .submit-btn {
+      width: 44px;
+      height: 44px;
+    }
+
     .options-row {
       flex-direction: column;
+      gap: 10px;
+    }
+
+    .select-input, .date-input, .notes-input {
+      padding: 10px;
+      font-size: 16px; /* prevents iOS zoom */
+    }
+
+    .priority-btn {
+      padding: 8px;
+      min-height: 40px;
     }
   }
 </style>

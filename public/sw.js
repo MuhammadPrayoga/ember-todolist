@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ember-v1'
+const CACHE_NAME = 'ember-v2'
 
 const ASSETS_TO_CACHE = [
   '/',

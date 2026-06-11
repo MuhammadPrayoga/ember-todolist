@@ -94,4 +94,12 @@
   .io-btn .material-icons {
     font-size: 18px;
   }
+
+  @media (max-width: 480px) {
+    .io-btn {
+      padding: 12px;
+      min-height: 44px;
+      font-size: 14px;
+    }
+  }
 </style>

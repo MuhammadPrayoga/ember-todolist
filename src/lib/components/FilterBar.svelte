@@ -222,4 +222,38 @@
   .clear-completed .material-icons {
     font-size: 16px;
   }
+
+  @media (max-width: 480px) {
+    .filter-bar {
+      padding: 12px;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      font-size: 13px;
+      min-height: 36px;
+    }
+
+    .search-box {
+      padding: 12px 14px;
+    }
+
+    .search-input {
+      font-size: 16px; /* prevents iOS zoom on focus */
+    }
+
+    .clear-completed {
+      width: 100%;
+      justify-content: center;
+      padding: 10px;
+      min-height: 40px;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .chip {
+      min-height: 36px;
+    }
+  }
 </style>

@@ -214,4 +214,23 @@
     font-weight: 600;
     color: var(--text-secondary);
   }
+
+  @media (max-width: 480px) {
+    .stats-dashboard {
+      padding: 16px;
+      gap: 16px;
+    }
+
+    .stat-value {
+      font-size: 22px;
+    }
+
+    .stat-card {
+      padding: 12px;
+    }
+
+    .stats-title {
+      font-size: 16px;
+    }
+  }
 </style>

@@ -540,6 +540,41 @@
   }
 
   @media (max-width: 480px) {
-    .actions { opacity: 1; }
+    .actions {
+      opacity: 1;
+    }
+
+    .todo-item {
+      padding: 12px 12px;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+    }
+
+    .subtasks-panel {
+      margin-left: 16px;
+      padding: 10px;
+    }
+
+    .subtask-remove {
+      opacity: 1;
+    }
+
+    .todo-text {
+      font-size: 15px;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .actions {
+      opacity: 1;
+    }
+
+    .subtask-remove {
+      opacity: 1;
+    }
   }
 </style>

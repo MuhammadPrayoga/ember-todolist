@@ -25,8 +25,25 @@
 <header class="header">
   <div class="header-content">
     <div class="header-left">
-      <div class="greeting">{greeting()}</div>
-      <h1 class="title"><span class="logo-icon">🔥</span> Ember</h1>
+      <div class="greeting">{greeting()}, <span class="user-name">Yoga</span></div>
+      <h1 class="title">
+        <svg class="logo-flame" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg-outer" x1="32" y1="58" x2="32" y2="6" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#fbbf24"/>
+              <stop offset="40%" stop-color="#f43f5e"/>
+              <stop offset="100%" stop-color="#e11d48"/>
+            </linearGradient>
+            <linearGradient id="lg-inner" x1="32" y1="50" x2="32" y2="28" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#fde68a"/>
+              <stop offset="100%" stop-color="#fb923c"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 6C32 6 18 22 18 36c0 7.7 6.3 14 14 14s14-6.3 14-14C46 22 32 6 32 6z" fill="url(#lg-outer)"/>
+          <path d="M32 28c0 0-7 8-7 15c0 3.9 3.1 7 7 7s7-3.1 7-7C39 36 32 28 32 28z" fill="url(#lg-inner)"/>
+        </svg>
+        <span class="logo-text">Ember</span>
+      </h1>
       <p class="date">{dateString}</p>
     </div>
     <div class="header-right">
@@ -46,6 +63,7 @@
 <style>
   .header {
     padding: 24px 16px 16px;
+    padding-top: calc(24px + env(safe-area-inset-top, 0px));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     background: var(--glass-bg);
@@ -74,11 +92,41 @@
     font-weight: 500;
   }
 
+  .user-name {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.3px;
+  }
+
   .title {
     font-size: 28px;
     font-weight: 700;
-    color: var(--text-primary);
     letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-flame {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 2px 8px rgba(244, 63, 94, 0.4));
+    animation: flamePulse 3s ease-in-out infinite;
+  }
+
+  @keyframes flamePulse {
+    0%, 100% { filter: drop-shadow(0 2px 8px rgba(244, 63, 94, 0.4)); transform: scale(1); }
+    50% { filter: drop-shadow(0 2px 14px rgba(244, 63, 94, 0.6)); transform: scale(1.05); }
+  }
+
+  .logo-text {
+    background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 50%, #e11d48 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    letter-spacing: -1px;
   }
 
   .date {
@@ -140,11 +188,53 @@
   }
 
   @media (max-width: 480px) {
-    .title {
-      font-size: 24px;
+    .header {
+      padding: 16px 12px 12px;
+      padding-top: calc(16px + env(safe-area-inset-top, 0px));
     }
+
+    .title {
+      font-size: 22px;
+      gap: 6px;
+    }
+
+    .logo-flame {
+      width: 24px;
+      height: 24px;
+    }
+
+    .greeting {
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .date {
+      font-size: 12px;
+    }
+
+    .header-right {
+      gap: 8px;
+    }
+
     .stats-badge {
       padding: 6px 10px;
+    }
+
+    .stats-number {
+      font-size: 16px;
+    }
+
+    .stats-label {
+      font-size: 12px;
+    }
+
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
+    }
+
+    .theme-toggle .material-icons {
+      font-size: 18px;
     }
   }
 </style>

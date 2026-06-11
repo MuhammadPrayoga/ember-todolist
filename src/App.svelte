@@ -107,7 +107,16 @@
   :global(body) {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
+    min-height: 100dvh;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :global(html) {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   .app {
@@ -217,6 +226,7 @@
     width: 100%;
     margin: 0 auto;
     padding: 24px 16px 48px;
+    padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px));
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -233,8 +243,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     border: 1px solid var(--glass-border);
     background: var(--glass-bg);
@@ -268,6 +278,10 @@
     font-size: 12px;
   }
 
+  .footer .shortcut-hint {
+    display: inline;
+  }
+
   .shortcut-hint kbd {
     display: inline-block;
     padding: 2px 6px;
@@ -282,9 +296,27 @@
   @media (max-width: 480px) {
     .container {
       padding: 16px 12px 32px;
+      padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+      gap: 12px;
     }
     .footer {
-      font-size: 11px;
+      display: none;
+    }
+    .orb-1 {
+      width: 200px;
+      height: 200px;
+    }
+    .orb-2 {
+      width: 160px;
+      height: 160px;
+    }
+    .orb-3 {
+      width: 120px;
+      height: 120px;
+    }
+    .tool-btn {
+      width: 44px;
+      height: 44px;
     }
   }
 </style>
