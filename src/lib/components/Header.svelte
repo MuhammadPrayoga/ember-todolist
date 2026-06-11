@@ -85,7 +85,7 @@
   }
 
   .greeting {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -94,7 +94,8 @@
 
   .user-name {
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 17px;
     text-transform: none;
     letter-spacing: 0.3px;
   }
@@ -204,8 +205,12 @@
     }
 
     .greeting {
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 1px;
+    }
+
+    .user-name {
+      font-size: 14px;
     }
 
     .date {
